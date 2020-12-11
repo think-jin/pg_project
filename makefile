@@ -1,14 +1,14 @@
-SRCS = 
-TARG = 
-CC =
-OPTS = 
-LIBS = 
+SRCS = ootd.c 
+TARG = ootd
+CC = gcc
+OPTS = -Wall -O
 
-OBJS =
+OBJS = $(SRCS: .c=.o)
 
-all:
+all: $(TARG)
 
 $(TARG): $(OBJS)
+	$(CC) -o $(TARG) $(OBJS)
 
 %.o: %.c
 	$(cc) $(OPTS) -c $< -o $@
