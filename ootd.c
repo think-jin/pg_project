@@ -56,7 +56,7 @@ int main() {
         info();
         
     first:
-        while (1) { //¼ýÀÚ ÀÌ¿ÜÀÇ ÀÔ·ÂÀ» ¹ÞÀ¸¸é ´Ù½Ã ÀÔ·Â¹Þ°ÔÇÔ
+        while (1) { //ìˆ«ìž ì´ì™¸ì˜ ìž…ë ¥ì„ ë°›ìœ¼ë©´ ë‹¤ì‹œ ìž…ë ¥ë°›ê²Œí•¨
             printf("CHOICE(1~7): ");
             num = scanf("%d", &command);
             while (getchar() != '\n');
@@ -82,7 +82,7 @@ int main() {
             add_ONode(&head2, make_ootd(&head));
             break;
         case 5:
-            printOOTDList(insertion_sort(&head2), printOOTDInfo); //¿À¸§Â÷¼ø Á¤·Ä O
+            printOOTDList(insertion_sort(&head2), printOOTDInfo); //ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬ O
             break;
         case 6:
             break;
@@ -90,7 +90,7 @@ int main() {
             printf("Exit OOTD JANG");
             return 0;
         default:
-            goto first; // 1~7 »çÀÌÀÇ ¼ýÀÚ°¡ ¾Æ´Ñ ¼ýÀÚ°¡ µé¾î¿À¸é goto¹®À» »ç¿ëÇØ »ó´ÜÀ¸·Î ÀÌµ¿ÇÑ´Ù.
+            goto first; // 1~7 ì‚¬ì´ì˜ ìˆ«ìžê°€ ì•„ë‹Œ ìˆ«ìžê°€ ë“¤ì–´ì˜¤ë©´ gotoë¬¸ì„ ì‚¬ìš©í•´ ìƒë‹¨ìœ¼ë¡œ ì´ë™í•œë‹¤.
         }
     }
     return 0;
@@ -261,11 +261,11 @@ O_Node* insertion_sort(O_Node* head_ptr) {
     while (p->next != NULL) {
         if (p->ootd.date > p->next->ootd.date)
         {
-            temp = p->next; // ¾ÕÀ¸·Î ¿Å°Ü¾ßÇÒ ³ëµå¸¦ temp¿¡ ÀúÀå
-            p->next = p->next->next; // temp¿¡ ÀúÀåÇÑ ³ðÀ» »©°í ¿¬°á ÇÕ´Ï´Ù.
-            temp->next = head_ptr; // tempÀÇ next´Â °¡Àå Ã¹ ÀÚ¸®¸¦ °¡¸®Åµ´Ï´Ù.
-            head_ptr = p = temp; // ±×¸®°í p¿Í head_ptr ¸ðµÎ temp·Î ÃÊ±âÈ­ ÇÔÀ¸·Î ½á ¸ðµÎ °¡Àå Ã¹ÀÚ¸®·Î °¡°Ô µË´Ï´Ù.       
-            continue; // °¡Àå Ã¹ ÀÚ¸®·Î °£ p°¡ ¹ØÀÇ p = p->link·Î ÀÎÇØ¼­ ¾ÕÀ¸·Î °¡Áö ¸øÇÏµµ·Ï ¸·´Â ¿ªÇÒÀ» ÇÕ´Ï´Ù.
+            temp = p->next; 
+            p->next = p->next->next; 
+            temp->next = head_ptr; 
+            head_ptr = p = temp;      
+            continue; 
         }
         p = p->next;
     }
