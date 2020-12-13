@@ -18,6 +18,8 @@ OOTD JANG is clothing management program with OOTD(Outfit Of The Day).
 ```
 $ git clone https://github.com/think-jin/pg_project.git
 
+$ cd pg_project/
+
 $ make
 
 $ ./ootd
